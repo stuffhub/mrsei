@@ -88,6 +88,9 @@ $yellow: #fae013
             animation: preloader 2s infinite ease-in-out
 header
     background: #fff
+section
+    &:not(.side)
+        padding: 80px 0
 .nav
     padding: 30px 0
     &.fl
@@ -250,3 +253,37 @@ header
             width: 100%
             line-height: 50px
             margin-top: 30px
+.numbers
+    overflow: hidden
+    background: $main-color
+    .blue-line
+        max-width: 22%
+    &__wrap
+        &.fl
+            justify-content: center
+.block-numbers
+    width: (100% / 3)
+    text-align: center
+    &__title
+        display: inline-block
+        text-align: center
+        color: $yellow
+        text-transform: uppercase
+        padding-bottom: 10px
+        font-size: 40px
+        font-family: 'MyriadPro-Black', 'Arial'
+        &:after
+            content: ''
+            position: absolute
+            bottom: 0
+            left: 50%
+            +transform(translateX(-50%))
+            height: 3px
+            width: 50%
+            background: $yellow
+    &__desc
+        text-align: center
+        color: #fff
+        font-size: 18px
+        margin-top: 20px
+        font-family: 'MyriadPro-SemiExt', 'Arial'

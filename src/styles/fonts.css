@@ -12,4 +12,30 @@
     src: url("../fonts/MyriadPro-Semibold.eot?#iefix") format("embedded-opentype"),
       url("../fonts/MyriadPro-Semibold.woff") format("woff"),
       url("../fonts/MyriadPro-Semibold.ttf") format("truetype");
-  }
+}
+
+@font-face {
+    font-family: "MyriadPro-Black";
+    src: url("../fonts/MyriadPro-Black.eot");
+    src: url("../fonts/MyriadPro-Black.eot?#iefix") format("embedded-opentype"),
+      url("../fonts/MyriadPro-Black.woff") format("woff"),
+      url("../fonts/MyriadPro-Black.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "MyriadPro-LightSemiCn";
+    src: url("../fonts/MyriadPro-LightSemiCn.eot");
+    src: url("../fonts/MyriadPro-LightSemiCn.eot?#iefix") format("embedded-opentype"),
+      url("../fonts/MyriadPro-LightSemiCn.woff") format("woff"),
+      url("../fonts/MyriadPro-LightSemiCn.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "MyriadPro-SemiExt";
+    src: url("../fonts/MyriadPro-SemiExt.eot");
+    src: url("../fonts/MyriadPro-SemiExt.eot?#iefix") format("embedded-opentype"),
+      url("../fonts/MyriadPro-SemiExt.woff") format("woff"),
+      url("../fonts/MyriadPro-SemiExt.ttf") format("truetype");
+}
+
+  

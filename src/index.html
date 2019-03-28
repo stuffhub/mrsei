@@ -76,7 +76,7 @@
     </header>
     <main class="main">
         <section class="side fl">
-            <div class="side__blue animated slideInLeft">
+            <div class="side__blue animated">
                 <div class="container">
                     <div class="side__wrapper">
                         <div class="side__logo">
@@ -128,7 +128,7 @@
                             </svg>
                         </div>
                         <p class="side__desc">Московский региональный социально-экономический институт начал осуществлять свою деятельность в сфере высшего профессионального образования с 1994 года.</p>
-                        <button class="side__button flicker">Узнать больше</button>
+                        <button class="side__button flicker" id="button-more">Узнать больше</button>
                     </div>
                 </div>
             </div>
@@ -137,7 +137,7 @@
                 <img src="../build/img/blue-line-m.svg" class="blue-line blue-line_m">
                 <img src="../build/img/blue-line-s.svg" class="blue-line blue-line_s">
                 <div class="container">
-                    <form class="side-form animated slideInLeft delay-1s">
+                    <form class="side-form animated">
                         <p class="side-form__title">Поступить в МРСЭИ!</p>
                         <div class="side-form__item">
                             <input type="text" placeholder="Имя" class="side-form__input">
@@ -156,6 +156,23 @@
                         </div>
                         <button class="side-form__submit flicker flicker_blue">Поступить!</button>
                     </form>
+                </div>
+            </div>
+        </section>
+        <section class="numbers">
+            <img src="../build/img/blue-line-l-white.svg" class="blue-line blue-line_l">
+            <img src="../build/img/blue-line-m-white.svg" class="blue-line blue-line_m">
+            <img src="../build/img/blue-line-s-white.svg" class="blue-line blue-line_s">
+            <div class="container">
+                <div class="numbers__wrap fl">
+                    <div class="numbers__block block-numbers">
+                        <p class="block-numbers__title">С <span id="number-since" data-number="1996">0</span> года</p>
+                        <p class="block-numbers__desc">Осуществлять свою деятельность в сфере высшего профессионального образования</p>
+                    </div>
+                    <div class="numbers__block block-numbers">
+                        <p class="block-numbers__title" id="number-department" data-number="6">0</p>
+                        <p class="block-numbers__desc">Кафедр</p>
+                    </div>
                 </div>
             </div>
         </section>

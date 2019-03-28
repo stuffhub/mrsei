@@ -11,3 +11,10 @@ $(window).on('load', function(){
         $(this).parent().removeClass('active');
     });
 });
+// Событие по кнопке "Узнать больше"
+$(document).on('click', '#button-more', function() {
+    const nextSectionPosition = $(this).closest('section').next('section').offset().top;
+    $('html, body').animate({
+        scrollTop: nextSectionPosition
+    }, 300);
+});
