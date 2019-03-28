@@ -23,11 +23,25 @@ $yellow: #fae013
         @content
     @keyframes #{$name}
         @content
-+keyframes(flicker)
++keyframes(flicker-blue)
+    from
+        box-shadow: 0 0 0 0 rgba(14, 86, 162, 0.09)
+    to
+        box-shadow: 0 0 0 20px rgba(14, 86, 162, 0.09)
++keyframes(flicker-white)
     from
         box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.09)
     to
         box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.09)
++keyframes(preloader)
+    from
+        width: 0%
+    50%
+        width: 100%
+    to
+        width: 0%
+        left: auto
+        right: 0
 ::-webkit-input-placeholder
     color: #000
     font-size: 16px
@@ -44,6 +58,34 @@ $yellow: #fae013
     color: #000
     font-size: 16px
     font-family: 'MyriadPro-Regular', 'Arial', sans-serif
+.preloader
+    position: fixed
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    background: #fff
+    z-index: 9999
+    &-block
+        position: absolute
+        top: 50%
+        left: 50%
+        +transform(translate(-50%, -50%))
+        height: 207px
+        width: 490px
+        &:before
+            content: ''
+            position: absolute
+            height: 5px
+            width: 0%
+            border-radius: 5px
+            background: $main-color
+            bottom: -25px
+            left: 0
+            -webkit-animation: preloader 2s infinite ease-in-out
+            -moz-animation: preloader 2s infinite ease-in-out
+            -o-animation: preloader 2s infinite ease-in-out
+            animation: preloader 2s infinite ease-in-out
 header
     background: #fff
 .nav
@@ -67,6 +109,37 @@ header
         +transition(transform 0.6s ease 1s)
     &.active
         +transform(translate(0%, 0%))
+.flicker
+    &:before, &:after
+        content: ''
+        position: absolute
+        border-radius: 20px
+        top: 0
+        left: 0
+        height: 100%
+        width: 100%
+        z-index: -1
+    &:before
+        -webkit-animation: flicker-white 1.5s infinite
+        -moz-animation: flicker-white 1.5s infinite
+        -o-animation: flicker-white 1.5s infinite
+        animation: flicker-white 1.5s infinite
+    &:after
+        -webkit-animation: flicker-white 1.5s infinite 0.4s
+        -moz-animation: flicker-white 1.5s infinite 0.4s
+        -o-animation: flicker-white 1.5s infinite 0.4s
+        animation: flicker-white 1.5s infinite 0.4s
+    &_blue
+        &:before
+            -webkit-animation: flicker-blue 1.5s infinite
+            -moz-animation: flicker-blue 1.5s infinite
+            -o-animation: flicker-blue 1.5s infinite
+            animation: flicker-blue 1.5s infinite
+        &:after
+            -webkit-animation: flicker-blue 1.5s infinite 0.4s
+            -moz-animation: flicker-blue 1.5s infinite 0.4s
+            -o-animation: flicker-blue 1.5s infinite 0.4s
+            animation: flicker-blue 1.5s infinite 0.4s
 .side
     overflow: hidden
     &.fl
@@ -113,23 +186,6 @@ header
         font-family: 'MyriadPro-Semibold', 'Arial'
         margin-top: 40px
         color: $main-color
-        &:before, &:after
-            content: ''
-            position: absolute
-            border-radius: 20px
-            top: 0
-            left: 0
-            height: 100%
-            width: 100%
-            z-index: -1
-            -webkit-animation: flicker 1.5s infinite
-            -moz-animation: flicker 1.5s infinite
-            -o-animation: flicker 1.5s infinite
-            animation: flicker 1.5s infinite
-        &:after
-            -webkit-animation-delay: .4s
-            -moz-animation-delay: .4s
-            -o-animation-delay: .4s
     &-form
         position: absolute
         top: 50%
@@ -183,3 +239,14 @@ header
             -moz-box-sizing: border-box
             box-sizing: border-box
             background: transparent
+        &__submit
+            display: block
+            cursor: pointer
+            background: $main-color
+            color: #fff
+            text-transform: uppercase
+            font-family: 'MyriadPro-Semibold', 'Arial'
+            border-radius: 20px
+            width: 100%
+            line-height: 50px
+            margin-top: 30px

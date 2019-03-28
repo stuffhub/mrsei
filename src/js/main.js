@@ -1,5 +1,9 @@
+const scroll = require('./scroll');
+
 $(window).on('load', function(){
-    $('.blue-line').addClass('active');
+    // Preloader
+    $('.preloader').fadeOut();
+    // Input Effect
     $('.side-form__input').on('focus', function(){
         $(this).parent().addClass('active');
     });

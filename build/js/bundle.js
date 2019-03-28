@@ -91,15 +91,45 @@
   !*** ./src/js/main.js ***!
   \************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+var scroll = __webpack_require__(/*! ./scroll */ "./src/js/scroll.js");
 
 $(window).on('load', function () {
-  $('.blue-line').addClass('active');
+  // Preloader
+  $('.preloader').fadeOut(); // Input Effect
+
   $('.side-form__input').on('focus', function () {
     $(this).parent().addClass('active');
   });
   $('.side-form__input').on('blur', function () {
     $(this).parent().removeClass('active');
+  });
+});
+
+/***/ }),
+
+/***/ "./src/js/scroll.js":
+/*!**************************!*\
+  !*** ./src/js/scroll.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(window).on('load scroll', function () {
+  var elementPosition = $(this).scrollTop() + $(this).height();
+  $('.animated, .side__white').each(function () {
+    var elementOffset = $(this).offset().top;
+
+    if (elementPosition > elementOffset) {
+      if ($(this).hasClass('side__blue')) {
+        $(this).addClass('slideInLeft');
+      } else if ($(this).hasClass('side-form')) {
+        $(this).addClass('slideInLeft delay-1s');
+      } else if ($(this).hasClass('side__white')) {
+        $(this).find('.blue-line').addClass('active');
+      }
+    }
   });
 });
 
