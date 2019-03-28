@@ -47,7 +47,7 @@ gulp.task('webpack', function(){
                 }
             ]
         },
-        mode: 'development',
+        mode: 'production',
         devtool: false
     }))
     .pipe(gulp.dest('build/js'))
