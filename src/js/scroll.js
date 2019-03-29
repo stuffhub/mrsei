@@ -1,5 +1,5 @@
-const numbers = require('./numbers');
-
+const delayCounter = require('./numbers');
+delayCounter('#number-since', 1000);
 $(window).on('load scroll', function() {
     const bottomPosition = $(this).scrollTop() + $(this).height() + 100;
     $('.animated, .side__white, .numbers, .numbers__block').each(function(){
@@ -12,8 +12,7 @@ $(window).on('load scroll', function() {
             } else if ($(this).hasClass('side__white') || $(this).hasClass('numbers')) {
                 $(this).find('.blue-line').addClass('active');
             } else if ($(this).hasClass('numbers__block')) {
-                numbers('#number-since', 2300);
-                numbers('#number-department', 2300);
+                 
             }
         }
     });
