@@ -1,5 +1,4 @@
 const delayCounter = require('./numbers');
-delayCounter('#number-since', 1000);
 $(window).on('load scroll', function() {
     const bottomPosition = $(this).scrollTop() + $(this).height() + 100;
     $('.animated, .side__white, .numbers, .numbers__block').each(function(){
@@ -12,7 +11,9 @@ $(window).on('load scroll', function() {
             } else if ($(this).hasClass('side__white') || $(this).hasClass('numbers')) {
                 $(this).find('.blue-line').addClass('active');
             } else if ($(this).hasClass('numbers__block')) {
-                 
+                delayCounter('#number-since', 1500);
+                delayCounter('#number-department', 1500);
+                delayCounter('#number-levels', 1500);
             }
         }
     });

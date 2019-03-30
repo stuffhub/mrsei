@@ -18,3 +18,11 @@ $(document).on('click', '#button-more', function() {
         scrollTop: nextSectionPosition
     }, 300);
 });
+
+$(document).on('click', '.list-btn', function() {
+    if ($(this).parent().next('ul').is(':hidden')) {
+        $(this).parent().next('ul').slideDown();
+    } else {
+        $(this).parent().next('ul').slideUp();
+    }
+});

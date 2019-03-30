@@ -42,6 +42,13 @@ $yellow: #fae013
         width: 0%
         left: auto
         right: 0
++keyframes(numbers-list)
+    from
+        top: 40%
+    50%
+        top: 60%
+    to
+        top: 40%
 ::-webkit-input-placeholder
     color: #000
     font-size: 16px
@@ -259,11 +266,13 @@ section
     .blue-line
         max-width: 22%
     &__wrap
+        margin: 0 -15px
         &.fl
             justify-content: center
 .block-numbers
     width: (100% / 3)
     text-align: center
+    padding: 0 15px
     &__title
         display: inline-block
         text-align: center
@@ -295,3 +304,28 @@ section
     text-transform: uppercase
     font-size: 42px
     margin-bottom: 60px
+.list-btn
+    cursor: pointer
+    display: inline-block
+    &:before
+        content: '\f107'
+        font-family: 'FontAwesome'
+        position: absolute
+        right: -15px
+        top: 50%
+        +transform(translateY(-50%))
+        -webkit-animation: numbers-list 2s infinite linear
+        -moz-animation: numbers-list 2s infinite linear
+        -o-animation: numbers-list 2s infinite linear
+        animation: numbers-list 2s infinite linear
+.numbers-list
+    display: none
+    margin-top: 25px
+    list-style-type: disc
+    list-style-position: outside
+    padding-left: 30px
+    text-align: left
+    &__item
+        color: #fff
+        margin-bottom: 9px
+        font-size: 14px
