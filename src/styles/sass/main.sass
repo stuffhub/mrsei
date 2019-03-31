@@ -1,5 +1,10 @@
 $main-color: #0e56a2
-$yellow: #fae013
+$org-medium: #fae013
+$org-light: #eca560
+$org-medium: #f5a418
+$org-dark: #ed721b
+$blue1: #3b66af
+$blue2: #3953a0
 =mq($val)
     @media screen and (min-width: $val+'px')
         @content
@@ -201,7 +206,7 @@ section
         top: 50%
         left: -10px
         +transform(translate(-100%, -50%))
-        border: 10px solid $yellow
+        border: 10px solid $org-medium
         padding: 30px
         &__title
             text-transform: uppercase
@@ -276,7 +281,7 @@ section
     &__title
         display: inline-block
         text-align: center
-        color: $yellow
+        color: $org-medium
         text-transform: uppercase
         padding-bottom: 10px
         font-size: 38px
@@ -289,7 +294,7 @@ section
             +transform(translateX(-50%))
             height: 3px
             width: 50%
-            background: $yellow
+            background: $org-medium
     &__desc
         text-align: center
         color: #fff
